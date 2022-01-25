@@ -1,7 +1,9 @@
 #include <iostream>
+#include <string>
 using namespace std;
 
 int main(){
+	string palabra1, palabra2;
 	string palabra;
 	int numero;
 	int numero1 = 1;
@@ -12,11 +14,41 @@ int main(){
 	bool booleano;
 
 	/*// Jugamos con palabra
-	palabra = "perro";
+	palabra1 = "perro";
+	cout << palabra1 << endl;
+	palabra2 = "verde";
+	cout << palabra2 << endl;
+	cout << palabra1 + " " + palabra2 << endl;
+	cout << palabra1 << " " << palabra2 << endl;
+
+	palabra = palabra1.append(palabra2)
 	cout << palabra << endl;
-	palabra = "casa";
+	palabra1.append(palabra2);
+	cout << palabra1 << endl;*/
+
+	palabra = "nada";
+	palabra = palabra + " " + palabra2;
+	cout << palabra1 << endl;
+	
+	int xint, yint;
+	string xstr, ystr;
+	xint = 10;
+	yint = 20;
+	xstr = "10";
+	ystr = "20";
+	cout << "Aqui se imprime el xint: " << xint << endl;
+	cout << "Aqui se imprime el xstr: " << xstr << endl;
+	cout << "int x+y = " << xint + yint << endl;
+	cout << "str x+y = " << xstr + ystr << endl;
+	cout << "xstr + to_string(yint) = " << xstr + to_string(yint) << endl;
+	cout << "stoi(xstr) + yint = " << stoi(xstr) + yint << endl;
+
 	cout << palabra << endl;
-	*/
+	cout << "La palabra tiene " << palabra.length() << " letras." << endl;
+	cout << "La palabra tiene " << palabra.size() << " letras." << endl;
+	cout << "La primera letra de palabra es: " << palabra[0];
+
+
 	/*//Jugamos con número
 	cout << numero1 << endl;
 	cout << numero2 << endl << numero3 << endl;
@@ -62,7 +94,7 @@ int main(){
 	cout << booleano << endl;
 	*/
 
-	//Jugar con operadores:
+	/*//Jugar con operadores:
 	numero1 = 4 + 5;
 	cout << numero1 << endl;
 	numero1 = 4 - 5;
@@ -94,7 +126,8 @@ int main(){
 	++numero1;
 	cout << numero1 << endl;
 	--numero1;
-	cout << numero1 << endl;
+	cout << numero1 << endl;*/
 
 	return 0;
 }
+
