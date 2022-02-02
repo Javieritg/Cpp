@@ -1,0 +1,141 @@
+#include <iostream>
+using namespace std;
+
+void solicitarContrasena(string clave){
+    string palabra;
+    int i;
+
+    /*CUANDO EL PULPO SE CABREA*/
+    /*cout << "Dame de comeeee" << endl;
+    cin >> palabra;
+    while (clave != palabra){
+        cout << "Subnormal dame comida" << endl;
+        cin >> palabra;
+    }*/
+
+    /*CUANDO EL PULPO SE CABREA POCO A POCO*/
+    cout << "Dame de comeeee" << endl;
+    cin >> palabra;
+    for (i = 0; clave != palabra && i < 3; i++){
+        cout << "Subnormal dame comida" << endl;
+        cin >> palabra; 
+    }
+    for ( ; clave != palabra && i < 10; i++){
+        cout << "Es que eres gilipollas o que te pasa" << endl;
+        cin >> palabra;
+    }
+    if (clave != palabra) cout << "El pulpo se cabreo y se fue";
+
+    /*CUANDO EL PULPO SOLO QUIERE COMER*/
+    /*do{
+        cout << "Dame de comeeee" << endl;
+        cin >> palabra;
+    }   while (clave !=palabra);*/
+}
+
+int funOctal1(int num){
+    return (num%8);
+}
+int funOctal2(int num){
+    return (num/8);
+}
+
+int aBase8(int numero){
+    int decenas;
+    int unidades;
+    if (numero > 64){
+        cout << "No estamos preparados para trabajar la recurrencia aun";
+        numero = -1;
+    }else{
+        unidades = numero%8;
+        decenas = numero/8;
+        numero = decenas*10+unidades;
+    }
+    return numero;
+}
+
+void imprimirLista(string lista[], int tama){
+    for (int i = 0; i < tama; i++){              /*es igual a (int i = 0; i < 5; i++)*/
+        cout << lista[i] << endl;
+    }
+}
+
+void imprimirLista(char lista[], int tama){
+    for (int i = 0; i < tama; i++){              
+        cout << lista[i] << endl;
+    }
+}
+
+void pasarLista(string lista[], int tama, char listaFaltas[]){
+    for (int i = 0; i < tama; i++){              /*es igual a (int i = 0; i < 5; i++)*/
+        string presentes;
+        cout << "Esta " << lista[i] << " en clase?" << endl;
+        cin >> presentes;
+        if (presentes == "si") listaFaltas[i] = 'V';
+        else listaFaltas[i] = 'F';
+    }
+}
+
+void imprimirArray(string lista[]){
+    for (int i = 0; i < 5; i++){
+        string presentes;
+        cout << lista[i] << endl;
+        cin >> presentes;
+    }
+    for (int i = 0 ; i < 5 ; i++){
+        string presentes;
+        cout << lista[i] << " = " << presentes << endl;
+    }
+    /*NO SE GUARDA SI FALTAN O NO*/
+    
+}
+void multiplos3(int numCrus[]){
+    for (int i = 0; i < 8; i++){
+            if (numCrus[i] % 3 == 0){
+            cout << numCrus[i] << endl;
+            }else{
+                numCrus[i] += 1;
+            cout << numCrus[i] << endl;
+            }
+        }
+    }
+
+
+int main(){
+    string nombre;
+
+    string repetir;
+    string avisar = "Dale de comer: ";
+    string contrasena = "crustaceos";
+    bool esCorrecto = false;
+
+    int numero;
+    int octal;
+    int numeroBase8;
+
+    string lista[5] = {"paul", "paco", "pepe", "miguel", "jaimito"};
+    string presentes;
+
+    int numCrus[] = {23,74,92,64,27,13,84,73};
+    int tama = 5;
+    char listaFaltas[tama];
+
+    nombre = "Javier";
+    cout << nombre << endl;
+
+    /*solicitarContrasena(contrasena);*/
+
+    /*cout << "Introduce un numero: " << endl;
+    cin >> numero;
+    numeroBase8=aBase8(numero);
+    cout << numeroBase8 << endl;*/
+
+    imprimirLista(lista, tama);
+    pasarLista(lista, tama, listaFaltas);
+    imprimirLista(listaFaltas, tama);
+
+    /*multiplos3(numCrus);
+    cout << "Todas las peceras son multiplos de 3" << endl;*/
+
+    return 0;
+}
