@@ -1,0 +1,90 @@
+#include <stdlib.h>
+#include <time.h>
+#include <iostream>
+using namespace std;
+
+
+
+
+int main(){
+
+int tama = 10;
+int vector1[tama];
+int vector2[tama] = {0,0,0,0,0,0,0,0,0,1};
+int num;
+int num2;
+int resultado;
+
+cout << "Javier" << endl;
+
+
+for (int i = 0 ; i < tama ; i++){
+        int num;
+        cout << "Introduce un numero mayor que 5: ";
+        cin >> num;
+        vector1[i] = num;
+    }
+for (int i = 0 ; i < tama ; i++){
+        cout << vector1[i] << endl;
+    }
+
+
+cout << "Di un numero del 1 al 10: " << endl;
+cin >> num2;
+
+cout <<  vector1[num] << endl;
+resultado = vector1[num] - 5;
+cout <<  resultado << endl;
+
+
+
+
+/*Lo primero que tenemos que hacer es incluir la libreria:
+#include<stdlib.h>
+
+Necesitamos esta libreria para usar la funcion time()
+#include<time.h>
+
+Luego inicializar los numeros aleatorios incluyendo esto:
+srand(time(NULL));
+
+Luego guardar el numero aleatorio en alguna parte:
+num = rand();
+
+Para ajustar el rango de numero aleatorios podemos hacer varias cosas.
+
+- Numero aleatorios entre 0 y 50:
+  num=rand()%51;
+
+- Numero aleatorios entre 1 y 100:
+  num=1+rand()%(101-1);
+
+- Numero aleatorios entre 250 y 420:
+  num=250+rand()%(421-250);
+
+De forma general es:
+variable = limite_inferior + rand() % (limite_superior +1 - limite_inferior);*/
+
+
+
+    srand(time(NULL));
+
+    int i;
+    int tama=10;
+    int aleatorio;
+    int DESDE=5;
+    int HASTA=30;
+    cout << "Numeros aleatorios entre " << DESDE << " y " << HASTA << endl;
+
+    for (i = 1; i <= tama; i ++){
+        aleatorio = rand()%(HASTA-DESDE+1)+DESDE;
+        cout << aleatorio << " ";
+    }
+    cout << endl;
+    system("pause");
+
+    
+
+
+return 0;
+}
