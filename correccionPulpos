@@ -66,6 +66,12 @@ void imprimirLista(char lista[], int tama){
     }
 }
 
+void imprimirLista(int lista[], int tama){
+    for (int i = 0; i < tama; i++){              
+        cout << lista[i] << endl;
+    }
+}
+
 void pasarLista(string lista[], int tama, char listaFaltas[]){
     for (int i = 0; i < tama; i++){              /*es igual a (int i = 0; i < 5; i++)*/
         string presentes;
@@ -100,6 +106,15 @@ void multiplos3(int numCrus[]){
         }
     }
 
+void reorganizarComida(int pecerasComida[], int tama){
+    int sobran = 0;
+    for (int i = 0; i < tama; i++){
+        pecerasComida[i] += sobran;
+        sobran = pecerasComida[i] % 3;
+        pecerasComida[i] -= sobran;
+    }
+}
+
 
 int main(){
     string nombre;
@@ -116,23 +131,33 @@ int main(){
     string lista[5] = {"paul", "paco", "pepe", "miguel", "jaimito"};
     string presentes;
 
-    int numCrus[] = {23,74,92,64,27,13,84,73};
+    int listaCrus[] = {23,74,92,64,27,13,84,73};
     int tama = 5;
     char listaFaltas[tama];
 
     nombre = "Javier";
     cout << nombre << endl;
 
-    /*solicitarContrasena(contrasena);*/
+    solicitarContrasena(contrasena);
+    cout << endl;
 
-    /*cout << "Introduce un numero: " << endl;
+    cout << "Introduce un numero: " << endl;
     cin >> numero;
     numeroBase8=aBase8(numero);
-    cout << numeroBase8 << endl;*/
+    cout << numeroBase8 << endl;
 
     imprimirLista(lista, tama);
+    cout << endl;
     pasarLista(lista, tama, listaFaltas);
+    cout << endl;
     imprimirLista(listaFaltas, tama);
+    cout << endl;
+
+    imprimirLista(listaCrus, 8);
+    cout << endl;
+    reorganizarComida(listaCrus, 8);
+    cout << endl;
+    imprimirLista(listaCrus, 8);
 
     /*multiplos3(numCrus);
     cout << "Todas las peceras son multiplos de 3" << endl;*/
