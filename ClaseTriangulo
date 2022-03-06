@@ -1,0 +1,74 @@
+#include <iostream>
+using namespace std;
+
+class Triangulo {               
+    private:                                                   
+        double lado;
+        double altura;
+        string color;
+
+    public:
+        /*Constructor*/
+        Triangulo(double lado = 1, double altura = 1, string color = "blanco"){                 
+            setLado(lado);
+            setAltura(altura);
+            setColor(color);
+        }
+        
+        /*Set*/
+        void setLado(double lado){
+            if (lado > 0) this->lado = lado;
+            else this->lado = 1;
+        }
+        void setAltura(double altura){
+            (altura > 0) ? this->altura = altura : this->altura = 1; 
+        }
+        void setColor(string color){
+            this->color = color;
+        }
+
+        /*Get*/
+        double getLado(){
+            return this->lado;
+        }
+        double getAltura(){
+            return this->altura;
+        }
+        string getColor(){
+            return this->color;
+        }
+
+        /*Metodos*/
+        double area(){
+            return (this->lado * this->altura)/2;
+        }
+        double perimetro(){
+            return (3 * this->lado);
+        }
+
+        /*Imprimir*/
+        void imprimir(){
+            cout << "La base del Triangulo es " << this->lado << " y la altura es " << this->altura << endl;
+        }
+};
+
+
+int main() {
+
+    Triangulo Tri(6,8);
+    double areaTriangulo;
+    double perimetroTriangulo;
+
+    cout << "Triangulo" << endl;
+
+    Tri.imprimir();
+
+    areaTriangulo = Tri.area();
+    cout << "El area del Triangulo es: " << areaTriangulo << endl;
+
+    perimetroTriangulo = Tri.perimetro();
+    cout << "El perimetro del Triangulo es: " << perimetroTriangulo << endl;
+
+
+  return 0;
+}
