@@ -1,0 +1,62 @@
+#include <iostream>
+using namespace std;
+
+class Circulo {               
+    private:                                                    
+        double radio;
+        const float PI  = 3.1416;
+        string color;
+
+    public:
+        /*Constructor*/
+        Circulo(double radio = 1, string color = "verde"){                 
+            setRadio(radio);
+            setColor(color);
+        }
+        /*Set*/
+        void setRadio(double radio){
+            (radio > 0) ? this->radio = radio : this->radio = 1;
+        }
+        void setColor(string color){
+            this->color = color;
+        }
+
+        /*Get*/
+        double getRadio(){
+            return this->radio;
+        }
+        string getColor(){
+            return this->color;
+        }
+
+        /*Metodos*/
+        double area(){
+            return this->PI*(this->radio * this->radio);
+        }
+        double perimetro(){
+            return 2*this->PI * this->radio;
+        }
+        /*Imprimir*/
+        void imprimir(){
+            cout << "El radio del tapon es " << this->radio << " y es de color " << this->color << endl;
+        }
+};
+
+
+int main() {
+
+    Circulo tapon(5);
+    double areaTapon;
+    double perimetroTapon;
+
+
+    cout << "Tapon" << endl;
+    tapon.imprimir();                                                                                       
+    areaTapon = tapon.area();
+    cout << "El area del tapon es: " << areaTapon << " cm2" << endl;
+    perimetroTapon = tapon.perimetro();
+    cout << "El perimetro del tapon es: " << perimetroTapon << " cm" << endl;
+
+
+  return 0;
+}
