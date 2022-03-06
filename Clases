@@ -1,0 +1,82 @@
+#include <iostream>
+using namespace std;
+
+class Rectangulo {               
+    private:                                                    /*No queremos que los atributos sean publicos*/
+        double base;
+        double altura;
+        string color;
+
+    public:
+        /*Constructor*/
+        Rectangulo(double base = 1, double altura = 1, string color = "amarillo"){                 
+            //this->base = base;
+            //this->altura = altura;
+            setBase(base);
+            setAltura(altura);
+            setColor(color);
+        }
+        /*Set*/
+        void setBase(double base){
+            if (base > 0) this->base = base;
+            else this->base = 1;
+        }
+        void setAltura(double altura){
+            (altura > 0) ? this->altura = altura : this->altura = 1;    /*Otra forma de poner el if/else*/
+        }
+        void setColor(string color){
+            this->color = color;
+        }
+        /*Get*/
+        double getBase(){
+            return this->base;
+        }
+        double getAltura(){
+            return this->altura;
+        }
+        string getColor(){
+            return this->color;
+        }
+        /*Metodos*/
+        double area(){
+            return this->base * this->altura;
+        }
+        double perimetro(){
+            return (2*this->base) + (2*this->altura);
+        }
+        /*Imprimir*/
+        void imprimir(){
+            cout << "La base es " << this->base << " y la altura es " << this->altura << " y es de color " << this->color << endl;
+        }
+};
+
+
+int main() {
+
+    Rectangulo folio(5,3);
+    Rectangulo tablero;
+    Rectangulo manta(4);
+    double areaFolio;
+    double perimetroFolio;
+
+
+    cout << "Folio" << endl;
+    cout << "La base de folio es " << folio.getBase() << " y la altura es " << folio.getAltura() << endl;   /*Con get mostramos los atributos*/
+    folio.setBase(2);                                                                                       /*Con set cambiamos los atributos*/
+    folio.setAltura(4);
+    cout << "La base de folio es " << folio.getBase() << " y la altura es " << folio.getAltura() << endl;   /*Con get mostramos los nuevos atributos*/
+    folio.imprimir();                                                                                       /*Con esto nos hemos ahorrado lo de antes*/
+
+    areaFolio = folio.area();
+    cout << "El area del folio es: " << areaFolio << endl;                                                                                       /*Con esto nos hemos ahorrado lo de antes*/
+    perimetroFolio = folio.perimetro();
+    cout << "El perimetro del folio es: " << perimetroFolio << endl;
+
+    cout << "Tablero" << endl;
+    tablero.imprimir();
+
+    cout << "Manta" << endl;
+    manta.imprimir();
+
+  return 0;
+}
