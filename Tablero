@@ -49,16 +49,31 @@ private:
     }
 
     /*void introValor(string valor){
+      cout << "Introduce un valor: "<< endl;
+      cin >> valor;
       for (int i = 0 ; i < this->filas ; i++){
         for (int j = 0 ; j < this->columnas ; j++){
-          cout << "Introduce un valor: ["<<i<<"]["<<j<<"]";
-          cin >> valor;
+          tablero[i][j] = valor;
         }
       }  
     }*/
 
-
-
+    void rellenarBN(){
+    int cont = 1;
+    string marca;
+      for (int i = 0 ; i < this->filas ; i++){
+          for (int j = 0 ; j < this->columnas ; j++){
+            if (cont % 2 == 0) {
+              tablero[i][j] = "N";
+            }
+            else
+              tablero[i][j] = "B";
+            cont += 1;
+          }
+          cont += 1;
+      }
+    }
+    
     void imprimir(){
       this->imprimirLinea();
       this->imprimirRaya();
@@ -75,6 +90,9 @@ int main(){
   cout << "==============================================" << endl;
   /*tablero.introValor();
   tablero.imprimir();*/
+  cout << "==============================================" << endl;
+  tablero.rellenarBN();
+  tablero.imprimir();
 
 
 
